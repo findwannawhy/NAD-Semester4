@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Информация</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <img src="logo.svg" alt="Логотип" class="logo" />
+
+    <button id="theme-toggle" class="theme-toggle-btn">Сменить тему</button>
+    <a href="index.html" style="text-decoration: none;">
+      <button id="calc-btn" class="theme-toggle-btn" style="right: 160px; top: 24px;">Калькулятор</button>
+    </a>
+
+    <div class="container">
+      <div class="footer">
+        <div class="footer-content">
+          <label for="group">Выберите группу:</label>
+          <select id="group" class="dropdown">
+            <option value="iu5-41b">ИУ5-41Б</option>
+            <option value="iu5-42b">ИУ5-42Б</option>
+            <option value="iu5-43b">ИУ5-43Б</option>
+            <option value="iu5-44b">ИУ5-44Б</option>
+            <option value="iu5-45b">ИУ5-45Б</option>
+            <option value="iu5-46b">ИУ5-46Б</option>
+          </select>
+          <details class="details">
+            <summary>Автор</summary>
+            <p><strong>ФИО:</strong> Санников Николай Александрович</p>
+            <p><strong>Группа:</strong> ИУ5-41Б</p>
+          </details>
+          <h2 class="footer-title">
+            Исполнитель ЛР: Санников Николай Александрович
+            <a href="https://github.com/findwannawhy">
+              <button id="btn_git" class="my-btn">GIT</button>
+            </a>
+          </h2>
+          <p class="footer-text">
+            Цель данной лабораторной работы -
+            <u>знакомство</u>
+            с инструментами построения пользовательских интерфейсов web-сайтов:
+            <u>HTML</u>, <u>CSS</u>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

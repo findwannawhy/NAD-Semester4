@@ -1,0 +1,208 @@
+/* Сброс отступов и настройка шрифтов */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Фон страницы и общий цвет текста */
+body {
+  background-color: #fafafa;
+  color: #333;               
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 20px;
+  position: relative;
+}
+
+/* Стили для логотипа, размещаемого в левом верхнем углу */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 40px;
+}
+
+/* Основной контейнер */
+.container {
+  width: 90%;
+  max-width: 400px;
+  background: #fff; 
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+/* Блок с калькулятором */
+.calculator {
+  margin-bottom: 24px;
+}
+
+/* Поле результата */
+.result {
+  width: 100%;
+  height: 60px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 16px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* Сетка кнопок */
+.calculator > div > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+/* Кнопки */
+.my-btn {
+  flex: 1;
+  margin: 0 4px;
+  height: 48px;
+  border-radius: 12px;
+  border: none;
+  background: #f2f2f2;
+  color: #333;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 1s ease, transform 1s ease, color 1s ease;
+}
+
+
+.my-btn:hover {
+  background: #e6e6e6;
+  transform: scale(1.03);
+}
+
+.my-btn:active {
+  transform: scale(0.97);
+}
+
+/* Кнопки операций (розовые акценты) */
+.my-btn.primary {
+  background: #ff007a; 
+  color: #fff;
+}
+
+/* При наведении на розовые кнопки делаем их более светлыми */
+.my-btn.primary:hover {
+  background: #ff66b3;
+}
+
+/* Специфичный стиль для кнопки "=" – чёрный цвет текста */
+#btn_op_equal {
+  color: #000 !important;
+}
+
+/* Кнопки execute (расширенные) */
+.my-btn.execute {
+  flex: 2;
+}
+
+/* Кнопки второстепенных операций */
+.my-btn.secondary {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  color: #666;
+}
+
+/* футер */
+.footer {
+  margin-top: 16px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Заголовки */
+h2.footer-title {
+  font-size: 16px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Выпадающий список */
+.dropdown {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* details и summary */
+.details {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.details summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+}
+
+.details p {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* Кнопка "GIT" внутри ссылки */
+#btn_git {
+  background: #f2f2f2;
+  border: 1px solid #ddd;
+  color: #333;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+#btn_git:hover {
+  background: #e6e6e6;
+}
+
+/* Текст в футере */
+.footer-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Кнопка переключения темы */
+.theme-toggle-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: #fff;
+  color: #ff007a;
+  border: 2px solid #ff007a;
+  border-radius: 12px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 1s ease-in-out;
+}
+
+.theme-toggle-btn:hover {
+  background: #ff007a;
+  color: #fff;
+}
