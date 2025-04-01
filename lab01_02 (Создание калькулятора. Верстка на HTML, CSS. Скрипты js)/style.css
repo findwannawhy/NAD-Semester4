@@ -54,7 +54,12 @@ body {
   padding-right: 16px;
   margin-bottom: 16px;
   color: #333;
+  white-space: pre-wrap;      /* Автоматический перенос строки */
+  overflow-wrap: break-word;   /* Перенос длинных слов */
+  word-break: break-all;       /* При необходимости разрывает слово, если оно слишком длинное */
 }
+
+
 
 /* Сетка кнопок */
 .calculator > div > div {
@@ -74,7 +79,7 @@ body {
   color: #333;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background 1s ease, transform 1s ease, color 1s ease;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
 
 
@@ -199,10 +204,23 @@ h2.footer-title {
   padding: 8px 16px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 1s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .theme-toggle-btn:hover {
   background: #ff007a;
   color: #fff;
+}
+
+body.dark-theme {
+  background-color: #333;
+}
+
+.container.dark-theme {
+  background: #444;
+}
+
+.my-btn.dark-theme {
+  background: #555;
+  border: 1px solid #666;
 }
