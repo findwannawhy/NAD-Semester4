@@ -1,0 +1,263 @@
+/* Сброс отступов и базовые стили */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Центрирование контента на всю высоту экрана */
+body {
+  background-color: #fafafa;
+  color: #333;
+  display: flex;
+  align-items: center;         /* Центровка по вертикали */
+  justify-content: center;     /* Центровка по горизонтали */
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+/* Логотип */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 40px;
+}
+
+/* Поисковая строка */
+.search-container {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  z-index: 1000;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 16px;
+  border: 2px solid #ff007a;
+  border-radius: 12px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+  background: #fff;
+  color: #333;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 0, 122, 0.2);
+}
+
+/* Тёмная тема для поиска */
+body.dark-theme .search-input {
+  background: #333;
+  color: #fff;
+  border-color: #ff007a;
+}
+
+body.dark-theme .search-input::placeholder {
+  color: #999;
+}
+
+/* Кнопка переключения темы */
+.theme-toggle-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: #fff;
+  color: #ff007a;
+  border: 2px solid #ff007a;
+  border-radius: 12px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+.theme-toggle-btn:hover {
+  background: #ff007a;
+  color: #fff;
+}
+
+/* Остальные стили (например, для .container) можно оставить на будущее, если понадобятся */
+.container {
+  width: 90%;
+  max-width: 1100px; 
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-top: 200px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Стили для аккордеона */
+.accordion {
+  margin-top: 60px;
+  padding-top: 30px;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+  border: none;
+}
+
+.accordion-button {
+  background-color: #f9f9f9;
+  color: #333;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #f9f9f9;
+  color: #333;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: none;
+}
+
+.accordion-collapse {
+  transition: all 0.3s ease;
+}
+
+.accordion-body {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Стили для детальной карточки продукта */
+.product-detail {
+  width: 300px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+.product-detail img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Контейнер для горизонтального скролла карточек */
+.card-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Обеспечивает, что каждый блок карточки не сжимается */
+.card-container {
+  flex: 0 0 auto;
+}
+
+/* Тёмная тема для body */
+body.dark-theme {
+  background-color: #333;
+  color: #fff;
+}
+
+/* При желании можно затемнять аккордеон */
+body.dark-theme .accordion {
+  background-color: #333;
+}
+
+body.dark-theme .accordion-body {
+  background-color: #333;
+}
+
+body.dark-theme .accordion-button {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark-theme .accordion-button:not(.collapsed) {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Стили для кнопок */
+.btn,
+.btn-outline-primary,
+.btn-outline-danger,
+.btn-outline-warning {
+  background: #fff !important;
+  color: #ff007a !important;
+  border: 2px solid #ff007a !important;
+  border-radius: 12px !important;
+  padding: 8px 16px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.btn:hover,
+.btn-outline-primary:hover,
+.btn-outline-danger:hover,
+.btn-outline-warning:hover {
+  background: #ff007a !important;
+  color: #fff !important;
+}
+
+/* Стили для кнопки "Добавить товар" */
+.btn-primary {
+  background: #ff007a !important;
+  color: #fff !important;
+  border: 2px solid #ff007a !important;
+  border-radius: 12px !important;
+  padding: 8px 16px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.btn-primary:hover {
+  background: #ff66b3 !important;
+  color: #fff !important;
+}
+
+/* Стили для страницы деталей */
+.display-4 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Тёмная тема для страницы деталей */
+body.dark-theme .display-4 {
+  color: #fff;
+}
+
+body.dark-theme .lead {
+  color: #ccc;
+}
+
+/* Стили для ценника товара */
+.badge.bg-primary {
+  background-color: #ff007a !important;
+  color: #fff !important;
+  font-size: 1.25rem !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px !important;
+}
+
