@@ -1,13 +1,12 @@
+import { makeXhrRequest } from '../widgets/MakeXhrRequest';
+
 const API_URL = '/';
 
 // Функция для выполнения GET запросов
 async function fetchData(endpoint) {
     try {
-        const response = await fetch(`${API_URL}${endpoint}`);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return await response.json();
+        // Заменяем fetch на makeXhrRequest для GET
+        return await makeXhrRequest('GET', `${API_URL}${endpoint}`);
     } catch (error) {
         console.error('Error fetching data:', error);
         throw error;
@@ -17,22 +16,8 @@ async function fetchData(endpoint) {
 // Функция для выполнения POST запросов
 async function postData(endpoint, data) {
     try {
-        const response = await fetch(`${API_URL}${endpoint}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        // Проверяем, есть ли тело ответа
-        const contentType = response.headers.get('content-type');
-        if (contentType && contentType.includes('application/json')) {
-            return await response.json();
-        }
-        return null; // Возвращаем null, если ответ пустой
+        // Заменяем fetch на makeXhrRequest для POST
+        return await makeXhrRequest('POST', `${API_URL}${endpoint}`, data);
     } catch (error) {
         console.error('Error posting data:', error);
         throw error;
@@ -42,22 +27,8 @@ async function postData(endpoint, data) {
 // Функция для выполнения PATCH запросов
 async function patchData(endpoint, data) {
     try {
-        const response = await fetch(`${API_URL}${endpoint}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        // Проверяем, есть ли тело ответа
-        const contentType = response.headers.get('content-type');
-        if (contentType && contentType.includes('application/json')) {
-            return await response.json();
-        }
-        return null; // Возвращаем null, если ответ пустой
+        // Заменяем fetch на makeXhrRequest для PATCH
+        return await makeXhrRequest('PATCH', `${API_URL}${endpoint}`, data);
     } catch (error) {
         console.error('Error updating data:', error);
         throw error;
@@ -67,18 +38,8 @@ async function patchData(endpoint, data) {
 // Функция для выполнения DELETE запросов
 async function deleteData(endpoint) {
     try {
-        const response = await fetch(`${API_URL}${endpoint}`, {
-            method: 'DELETE',
-        });
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        // Проверяем, есть ли тело ответа
-        const contentType = response.headers.get('content-type');
-        if (contentType && contentType.includes('application/json')) {
-            return await response.json();
-        }
-        return null; // Возвращаем null, если ответ пустой
+        // Заменяем fetch на makeXhrRequest для DELETE
+        return await makeXhrRequest('DELETE', `${API_URL}${endpoint}`);
     } catch (error) {
         console.error('Error deleting data:', error);
         throw error;
