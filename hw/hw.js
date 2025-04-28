@@ -2,6 +2,8 @@
 // Если в функцию вторым аргументом передаётся число — то переставляются все элементы массива кроме нескольких первых (количество зависит от числа).
 // Если число отрицательное — то на месте остаются элементы в конце массива
 
+import readline from 'readline';
+
 function inverse(arr, n) {
   if (!Array.isArray(arr)) {
     throw new Error("Первый аргумент должен быть массивом");
@@ -39,7 +41,21 @@ function inverse(arr, n) {
   }
 }
 
-// Примеры использования:
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('Введите массив и число n (например: "1 2 3 4 5, 2"): ', (input) => {
+  const parts = input.split(',');
+  const arr = parts[0].trim().split(' ').map(Number);
+  const n = parts.length > 1 ? Number(parts[1]) : undefined;
+  const result = inverse(arr, n);
+  console.log(`Исходный: [${arr}] -> Результат: [${result}]`);
+  rl.close();
+});
+
+/*    EXAMPLES W NO INPUT
 console.log("inverse([1, 2, 3, 4, 5]):", inverse([1, 2, 3, 4, 5])); // [5, 4, 3, 2, 1]
 console.log("inverse([1, 2, 3, 4, 5], 2):", inverse([1, 2, 3, 4, 5], 2)); // [1, 2, 5, 4, 3]
 console.log("inverse([1, 2, 3, 4, 5], -2):", inverse([1, 2, 3, 4, 5], -2)); // [3, 2, 1, 4, 5]
@@ -48,8 +64,8 @@ console.log("inverse([1, 2, 3, 4, 5], -5):", inverse([1, 2, 3, 4, 5], -5)); // [
 console.log("inverse([]):", inverse([])); // []
 console.log("inverse([], 2):", inverse([], 2)); // []
 
-// Проверка, что оригинальный массив не изменен
 const original = [10, 20, 30, 40];
 const result = inverse(original, 1);
 console.log("Original array:", original); // [10, 20, 30, 40]
 console.log("Result:", result); // [10, 40, 30, 20]
+*/
